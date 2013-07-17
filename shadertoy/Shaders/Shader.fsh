@@ -15,6 +15,7 @@ uniform  vec2 mouse ;
 uniform  vec2 resolution ;
 
 void main() {
+  
     vec2 position = ( gl_FragCoord.xy / resolution.xy ) + mouse / 2.0;
     
 	float color = 0.2;

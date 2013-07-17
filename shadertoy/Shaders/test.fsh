@@ -21,7 +21,9 @@ vec3 field(vec3 p) {
 
 void main( void ) {
 	vec3 dir = normalize(vec3((gl_FragCoord.xy-resolution*.5)/resolution.x,1.));
-	float a = time * 0.4;
+	float a = time * 0.1;
+   gl_FragColor = vec4(a,0.4,1.0,1.0);
+   return;
 	vec3 pos = vec3(time*0.6 + sin(time)*0.2,sin(time)*0.25,-3.0);
 
 	vec3 color = vec3(0);

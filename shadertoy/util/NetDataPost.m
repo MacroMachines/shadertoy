@@ -59,4 +59,31 @@
     return op;
 }
 
+-(MKNetworkOperation*) getDataWithRequestData: (NSString*) path  usingBlockObject:(postGetDataBlock) paramBlockObject
+{
+   MKNetworkOperation *op = [self operationWithPath:path
+                                             params:nil
+                                         httpMethod:@"GET"];
+   [op addCompletionHandler:^(MKNetworkOperation *operation) {
+
+         //      NSError *error=nil;
+      NSDictionary *dataSet=nil;
+      NSLog(@"response:%@",operation.responseJSON);
+
+      @try {
+         dataSet = [NSDictionary dictionaryWithObject:operation.responseString forKey:@"responseText"];
+      }
+      @finally {
+         paramBlockObject(dataSet);
+      }
+
+
+   } errorHandler:^(MKNetworkOperation *errorOp, NSError* error) {
+
+   }];
+   [self enqueueOperation:op];
+   return op;
+}
+
+
  @end

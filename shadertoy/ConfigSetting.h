@@ -36,4 +36,5 @@
 
 #define DEFAULT_FRAGMENT        @"simple" 
 #define GLSL_FRAGMENT_JSON      @"item/"  
-#define GLSL_WWW_ROOT           @"glsl.heroku.com/"  
+#define GLSL_PAGE      @"page="  
+#define GLSL_WWW_ROOT           @"glsl.heroku.com/"

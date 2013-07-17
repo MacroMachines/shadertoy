@@ -57,7 +57,9 @@
     self.window.rootViewController = self.homeViewController;
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController] ;
-    
+   self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
+
     if ([self.window respondsToSelector:@selector(setRootViewController:)]) {
         self.window.rootViewController = self.navigationController;
     } else {

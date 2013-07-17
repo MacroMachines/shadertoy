@@ -57,6 +57,14 @@
 		6CAA220F1678A797009BB691 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA220E1678A797009BB691 /* Shader.fsh */; };
 		6CAA22111678A797009BB691 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA22101678A797009BB691 /* Shader.vsh */; };
 		6CAA22141678A797009BB691 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA22131678A797009BB691 /* ViewController.m */; };
+		CA0D27CF179478C600F317D4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D27CE179478C600F317D4 /* CoreVideo.framework */; };
+		CA0D27D1179478D500F317D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D27D0179478D500F317D4 /* AVFoundation.framework */; };
+		CA0D27D3179478DE00F317D4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D27D2179478DE00F317D4 /* Accelerate.framework */; };
+		CA0D27D5179478EA00F317D4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D27D4179478EA00F317D4 /* CoreMedia.framework */; };
+		CA0EC965173AB60600E16578 /* GalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0EC964173AB60400E16578 /* GalleryView.m */; };
+		CA0EC967173AC70A00E16578 /* blankbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0EC966173AC70A00E16578 /* blankbutton.png */; };
+		CA528D66173C198A009CA7DA /* UIColor+unixcolors.m in Sources */ = {isa = PBXBuildFile; fileRef = CA528D65173C198A009CA7DA /* UIColor+unixcolors.m */; };
+		CA528D69173C1BBA009CA7DA /* HistoryLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CA528D68173C1BBA009CA7DA /* HistoryLog.m */; };
 		D66049C616C2296100AB3752 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66049C416C2296000AB3752 /* TestViewController.m */; };
 		D66049C716C2296100AB3752 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66049C516C2296100AB3752 /* TestViewController.xib */; };
 /* End PBXBuildFile section */
@@ -138,6 +146,17 @@
 		6CAA22121678A797009BB691 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6CAA22131678A797009BB691 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6CAA221B1678A797009BB691 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CA0D27CE179478C600F317D4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CA0D27D0179478D500F317D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CA0D27D2179478DE00F317D4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CA0D27D4179478EA00F317D4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		CA0EC963173AB60200E16578 /* GalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryView.h; sourceTree = "<group>"; };
+		CA0EC964173AB60400E16578 /* GalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryView.m; sourceTree = "<group>"; };
+		CA0EC966173AC70A00E16578 /* blankbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankbutton.png; sourceTree = "<group>"; };
+		CA528D64173C198A009CA7DA /* UIColor+unixcolors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+unixcolors.h"; sourceTree = "<group>"; };
+		CA528D65173C198A009CA7DA /* UIColor+unixcolors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+unixcolors.m"; sourceTree = "<group>"; };
+		CA528D67173C1BBA009CA7DA /* HistoryLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryLog.h; sourceTree = "<group>"; };
+		CA528D68173C1BBA009CA7DA /* HistoryLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryLog.m; sourceTree = "<group>"; };
 		D66049C316C2296000AB3752 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = test/TestViewController.h; sourceTree = "<group>"; };
 		D66049C416C2296000AB3752 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = test/TestViewController.m; sourceTree = "<group>"; };
 		D66049C516C2296100AB3752 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestViewController.xib; path = test/TestViewController.xib; sourceTree = "<group>"; };
@@ -148,6 +167,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0D27D5179478EA00F317D4 /* CoreMedia.framework in Frameworks */,
+				CA0D27D3179478DE00F317D4 /* Accelerate.framework in Frameworks */,
+				CA0D27D1179478D500F317D4 /* AVFoundation.framework in Frameworks */,
+				CA0D27CF179478C600F317D4 /* CoreVideo.framework in Frameworks */,
 				6C76FB3116BE86D7000BD900 /* QuartzCore.framework in Frameworks */,
 				6C2738D516BE39250064F722 /* CFNetwork.framework in Frameworks */,
 				6C2738D316BE390B0064F722 /* SystemConfiguration.framework in Frameworks */,
@@ -229,6 +252,7 @@
 		6C2738B616BE35E80064F722 /* webview */ = {
 			isa = PBXGroup;
 			children = (
+				CA0EC966173AC70A00E16578 /* blankbutton.png */,
 				6C2738B716BE35E90064F722 /* goBackItem.png */,
 				6C2738B816BE35E90064F722 /* goBackItem@2x.png */,
 				6C2738B916BE35E90064F722 /* goForwardItem.png */,
@@ -269,6 +293,10 @@
 		6CAA21E31678A796009BB691 = {
 			isa = PBXGroup;
 			children = (
+				CA0D27D4179478EA00F317D4 /* CoreMedia.framework */,
+				CA0D27D2179478DE00F317D4 /* Accelerate.framework */,
+				CA0D27D0179478D500F317D4 /* AVFoundation.framework */,
+				CA0D27CE179478C600F317D4 /* CoreVideo.framework */,
 				6CAA21FC1678A797009BB691 /* shadertoy */,
 				6CAA21F11678A797009BB691 /* Frameworks */,
 				6CAA21EF1678A797009BB691 /* Products */,
@@ -303,6 +331,10 @@
 		6CAA21FC1678A797009BB691 /* shadertoy */ = {
 			isa = PBXGroup;
 			children = (
+				CA528D67173C1BBA009CA7DA /* HistoryLog.h */,
+				CA528D68173C1BBA009CA7DA /* HistoryLog.m */,
+				CA528D64173C198A009CA7DA /* UIColor+unixcolors.h */,
+				CA528D65173C198A009CA7DA /* UIColor+unixcolors.m */,
 				6C87EEB416BE96BB0001D341 /* readme.txt */,
 				6C27386616BE17A60064F722 /* ConfigSetting.h */,
 				6CAA22051678A797009BB691 /* AppDelegate.h */,
@@ -318,6 +350,8 @@
 				6C27386116BE17240064F722 /* HomeViewController.h */,
 				6C27386216BE17240064F722 /* HomeViewController.m */,
 				6C27386316BE17240064F722 /* HomeViewController.xib */,
+				CA0EC963173AB60200E16578 /* GalleryView.h */,
+				CA0EC964173AB60400E16578 /* GalleryView.m */,
 				D66049C816C2296700AB3752 /* test */,
 				6C2738BF16BE360B0064F722 /* util */,
 				6C2738C616BE36250064F722 /* model */,
@@ -425,6 +459,7 @@
 				6C2738D116BE386C0064F722 /* Default-568h@2x.png in Resources */,
 				6C87EEB516BE96BB0001D341 /* readme.txt in Resources */,
 				D66049C716C2296100AB3752 /* TestViewController.xib in Resources */,
+				CA0EC967173AC70A00E16578 /* blankbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +490,9 @@
 				6C76FB2E16BE7BCB000BD900 /* OpenGLView.m in Sources */,
 				6C87EEB816BE98100001D341 /* SimpleOpenGLView.m in Sources */,
 				D66049C616C2296100AB3752 /* TestViewController.m in Sources */,
+				CA0EC965173AB60600E16578 /* GalleryView.m in Sources */,
+				CA528D66173C198A009CA7DA /* UIColor+unixcolors.m in Sources */,
+				CA528D69173C1BBA009CA7DA /* HistoryLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,11 +568,16 @@
 		6CAA222D1678A797009BB691 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ralph Seaman (36W9NQHNU6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ralph Seaman (3U78P2572R)";
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shadertoy/shadertoy-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "shadertoy/shadertoy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -542,11 +585,13 @@
 		6CAA222E1678A797009BB691 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ralph Seaman (36W9NQHNU6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shadertoy/shadertoy-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "shadertoy/shadertoy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
