@@ -7,7 +7,8 @@ This is a fork from openkava that I modified a bit in order to make it work on i
 and source editor to help me learn openGL / shader language.
 
 
-Upon load, it will retrieve the gallery images from http://glsl.heroku.com which is a bit slow because the images are in html source and base64 encoded, the conversion to UIImage takes longer than I would have expected.
+Upon load, it will retrieve the gallery images from http://glsl.heroku.com, which you can then page through as you can on glsl.heroku.com.
+(note -- is a bit slow because the web images are in base64, and the conversion to UIImage takes longer than I would have expected.)
 
 Then you can select a shader from the gallery, run it, edit it, run again.
 
@@ -25,4 +26,9 @@ Here are some screenshots:
 ![source view](screen2.png)
 
 ![shader running ](screen3.png)
+
+
+The opengl parts incorporates code from a bunch of places, such as Ray Wanderlich opengl tutorials and Brad Larson's GPUImage
+
+
 
