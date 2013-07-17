@@ -16,7 +16,7 @@ It is a very rough cut, alpha level software but it does run shaders that were m
 Many of the shaders on the heroku sandbox need more firepower than the ipad provides, and thus the frame rate is really slow on some.
 Some will not compile, and there is is little protection against bad shader source coming in from the web.
 
-But for the most part it is something that will run a lot of different shaders, and load the source for you to edit and tweak to your hearts content.
+But for the most part will run a lot of different shaders, and load the source for you to edit and tweak to your heart's content.
 
 
 Here are some screenshots:
