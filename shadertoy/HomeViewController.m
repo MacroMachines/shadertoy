@@ -25,9 +25,12 @@
     return self;
 }
 
+   /// gallery delegate
 -(void) didSelectItem:(NSInteger ) item{
 
-   self.mTitle.text = [NSString stringWithFormat:@"%d" ,(int)self.mySlider.value ];
+   self.mTitle.text = [NSString stringWithFormat:@"%d" ,item];
+   [self.mySlider setValue:(float)item];
+      //self.mTitle.text = [NSString stringWithFormat:@"%d" ,(int)self.mySlider.value ];
       //int itemID = (int)self.mySlider.value;
    NSString *path = [NSString stringWithFormat:@"%@%d" , GLSL_FRAGMENT_JSON, item ];
    [self toggleGallery:self];

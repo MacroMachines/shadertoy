@@ -133,8 +133,6 @@ const GLubyte Indices[] = {
    [self compileShaders];
    [self setupVBOs];
 
-      // for rendering just the shader
-
    if(useDisplayLink==YES){
       [self setupDisplayLink];
    }
@@ -189,6 +187,7 @@ const GLubyte Indices[] = {
    self.vertexShaderFilename =@"simple1";
 
    self.shaderV  = [self loadFile : self.vertexShaderFilename fileExt:@"vsh"];
+   displayLink = nil;
 
    if(shaderFromString){
          // shader string passed in init
@@ -302,15 +301,16 @@ const GLubyte Indices[] = {
 }
 - (void)setupDisplayLink {
    NSLog(@"%s",__PRETTY_FUNCTION__);
-   displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
-   displayLink.frameInterval = 1;
-   [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+   if(displayLink == nil){
+      displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+      displayLink.frameInterval = 1;
+      [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+   }
 }
 
 -(void) stopDisplayLink {
    [displayLink invalidate];
-
-
+   displayLink = nil;
 }
 - (void)dealloc
 {

@@ -47,7 +47,7 @@
    self.backgroundColor = [UIColor darkGrayColor];
 
    NSInteger pn = [[NSUserDefaults standardUserDefaults] integerForKey:@"pagenum"];
-   NSLog(@"%s %d",__PRETTY_FUNCTION__,pn);
+   NSLog(@"%s pagenum = %d",__PRETTY_FUNCTION__,pn);
    self.pagenum = pn;
 
    galleryFilter = NO;
@@ -178,6 +178,9 @@
 }
 
 -(void) loadPage {
+
+   [self savePageNum:self.pagenum];
+
    statusmsg.text = @"Loading...";
    colcounter = 0;
    anchors = nil;
