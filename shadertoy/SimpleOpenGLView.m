@@ -4,7 +4,7 @@
 
  usage
  simpleGLView  =  [SimpleOpenGLView alloc]  ;
- simpleGLView = [simpleGLView initWithFrame:_containerView.bounds andShader:@"simple1"];
+ simpleGLView = [simpleGLView initWithFrame:_containerView.bounds andShader:@"simple1"]; // assumes such a file exists...
  CGAffineTransform verticalFlip = CGAffineTransformMakeScale(1,-1);
  simpleGLView.transform = verticalFlip;
  _containerView.opaque=  NO;

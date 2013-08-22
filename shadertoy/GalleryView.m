@@ -259,7 +259,7 @@
    lastx = lastx + thumbwidth;
    colcounter++;
    int cols = (int) self.bounds.size.width/thumbwidth;
-   int rows = (int) self.bounds.size.height/thumbheight;
+      // int rows = (int) self.bounds.size.height/thumbheight;
    if(colcounter % cols == 0){
       lastx = 0.0;
       lasty += thumbheight;
@@ -359,7 +359,7 @@
 
      //NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
       NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:str]];
-      UIImage *img = [UIImage imageWithData:data];
+         //UIImage *img = [UIImage imageWithData:data];
       UIImageView *animage = [[UIImageView alloc]initWithImage:[UIImage imageWithData:data]];
       animage.center = CGPointMake(0,foo);
       [containerview addSubview:animage];
