@@ -32,7 +32,7 @@
    NSMutableString *currentStringValue;
 }
 @property (nonatomic, weak) id delegate;
-@property (nonatomic, assign) int pagenum;
+@property (nonatomic, assign) NSInteger pagenum;
 -(void) prevPage:(id)sender;
 -(void) nextPage:(id)sender;
 -(void) loadPage;
@@ -46,5 +46,6 @@
 @optional
 
 -(void) didSelectItem:(NSInteger) item;
+-(void) setSliderRange:(NSInteger) max;
 
 @end

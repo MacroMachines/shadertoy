@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import "HomeViewController.h"
-#import "OpenGLView.h"
 #import "SimpleOpenGLView.h"
-
 
 
 @implementation AppDelegate
@@ -20,24 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // 直接调用gl窗口
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self.viewController = [[ViewController alloc] init];
-//    } else {
-//        self.viewController = [[ViewController alloc] init];
-//    }
-//    self.window.rootViewController = self.viewController;
-//    
-    
-//    CGRect screenBounds = [[UIScreen mainScreen] bounds]; 
-//    self.glView = [[OpenGLView alloc] initWithFrame:screenBounds] ;
-//    [self.window addSubview:self.glView];
-//    [self.window makeKeyAndVisible];
-//
 
 #undef DEBUG_ME
+    
+//#define DEBUG_ME
     
 #ifdef DEBUG_ME
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -69,8 +54,7 @@
     [self.window makeKeyAndVisible];
     
     [self.netDataPost useCache];
-    self.netDataPost = [[NetDataPost alloc] initWithHostName:GLSL_WWW_ROOT customHeaderFields:nil];
-    self.user  = [[User alloc] init];
+    self.netDataPost = [[APIService alloc] initWithHostName:GLSL_WWW_ROOT customHeaderFields:nil];
 
 #endif
 

@@ -37,5 +37,7 @@
 - (IBAction)stopShader:(id)sender;
 
 -(void) didSelectItem:(NSInteger ) item;
+-(void) setSliderRange:(NSInteger) max;
+
 
 @end

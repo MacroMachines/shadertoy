@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
-#import "util/NetDataPost.h"
+#import "APIService.h"
 
 
 @class ViewController;
@@ -24,13 +23,11 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong,nonatomic) UINavigationController *navigationController ;
 
-@property (strong, nonatomic) ViewController *viewController;
-@property (strong ,nonatomic)HomeViewController *homeViewController;
-@property (strong ,nonatomic) User *user;
-@property (nonatomic, retain)    OpenGLView *glView;
+@property (strong, nonatomic)   ViewController *viewController;
+@property (strong ,nonatomic)   HomeViewController *homeViewController;
 
 
-@property (strong, nonatomic) NetDataPost *netDataPost ;
+@property (strong, nonatomic) APIService *netDataPost ;
 @property (strong ,nonatomic) NSDate *lastCheckUpdateDT;
 
 

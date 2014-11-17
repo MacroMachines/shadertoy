@@ -13,5 +13,11 @@
     #import <Foundation/Foundation.h>
     #import "MKNetworkKit/MKNetworkKit.h"
     #import "AppDelegate.h"
-    #import "ConfigSetting.h"
 #endif
+
+
+// putting here for short term storage
+#define DEFAULT_FRAGMENT        @"simple"
+#define GLSL_FRAGMENT_JSON      @"item/"
+#define GLSL_PAGE      @"page="
+#define GLSL_WWW_ROOT           @"glslsandbox.com"

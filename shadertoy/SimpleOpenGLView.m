@@ -1,4 +1,4 @@
-   //  SimpleOpenGLView.m
+//  SimpleOpenGLView.m
 
 /*
 
@@ -10,8 +10,6 @@
  _containerView.opaque=  NO;
  _containerView.backgroundColor = [UIColor clearColor];
  [self.view addSubview:simpleGLView];
-
-
  */
 
 #import "SimpleOpenGLView.h"
@@ -30,24 +28,27 @@ typedef struct {
    float Position[3];
    float Color[4];
    float TexCoord[2]; // New
-
 } Vertex;
 
 #define TEX_COORD_MAX   1
 
+/*
 static const GLfloat squareVertices[] = {
    -1.0f, -1.0f,
    1.0f, -1.0f,
    -1.0f,  1.0f,
    1.0f,  1.0f
 };
+ */
 
+/*
 static const GLfloat texCoords[] = {
    0.0, 1.0,
    1.0, 1.0,
    0.0, 0.0,
    1.0, 0.0
 };
+ */
 
 
 const Vertex Vertices[] = {
@@ -173,6 +174,8 @@ const GLubyte Indices[] = {
 + (Class)layerClass {
    return [CAEAGLLayer class];
 }
+
+
 - (void)setupLayer {
    _eaglLayer = (CAEAGLLayer*) self.layer;
    _eaglLayer.opaque = NO;
@@ -271,7 +274,7 @@ const GLubyte Indices[] = {
 }
 
 
-- (void)render :(CADisplayLink*)displayLink {
+- (void)render:(CADisplayLink*)displayLink {
 
    glClearColor(0.0f, 0.0f, 0.0f, 0.0f );
 
@@ -290,7 +293,6 @@ const GLubyte Indices[] = {
       // 3
    glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]),
                   GL_UNSIGNED_BYTE, 0);
-
 
    [_context presentRenderbuffer:GL_RENDERBUFFER];
 
@@ -382,6 +384,7 @@ const GLubyte Indices[] = {
 
       // 1
    GLuint vertexShader = [self compileShader:self.shaderV      withType:GL_VERTEX_SHADER]  ;
+
    GLuint fragmentShader;
    if(![self canCompileShader:self.shaderF withType:GL_FRAGMENT_SHADER]){
       NSLog(@"%s shader does not compile",__PRETTY_FUNCTION__);
@@ -395,7 +398,6 @@ const GLubyte Indices[] = {
 
    }
    fragmentShader = [self compileShader:self.shaderF     withType:GL_FRAGMENT_SHADER ];
-
 
       // 2
    programHandle = glCreateProgram();
@@ -570,9 +572,9 @@ CGPoint originalLocation;
    startTime = [NSDate date];
 
    AVURLAsset * asset = [AVURLAsset URLAssetWithURL:url options:nil];
-      // create an AVPlayer with your composition
-      //AVPlayer* mp = [AVPlayer playerWithPlayerItem:[AVPlayerItem playerItemWithAsset:asset]];
-      //[mp play];
+  // create an AVPlayer with your composition
+  //AVPlayer* mp = [AVPlayer playerWithPlayerItem:[AVPlayerItem playerItemWithAsset:asset]];
+  //[mp play];
 
    NSArray *keys = @[@"duration"];
    [asset loadValuesAsynchronouslyForKeys:keys completionHandler:^() {
@@ -658,11 +660,8 @@ CGPoint originalLocation;
                       });
     }];
 }
-static int foo = 1;
 
 - (void) readNextMovieFrame {
-      //NSLog(@"readNextMovieFrame called");
-   foo++;
    if (_movieReader.status == AVAssetReaderStatusReading) {
          //NSLog(@"status is reading");
       AVAssetReaderTrackOutput * output = [_movieReader.outputs objectAtIndex:0];
@@ -705,12 +704,9 @@ static int foo = 1;
 
          if(status == 0){
 
-
-               // Create a new texture from the camera frame data, display that using the shaders
-               //glGenTextures(1, &videoFrameTexture);
-               //glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
-
-
+           // Create a new texture from the camera frame data, display that using the shaders
+           //glGenTextures(1, &videoFrameTexture);
+           //glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
 
             glActiveTexture(GL_TEXTURE0);
             glEnable(GL_TEXTURE_2D);
@@ -765,7 +761,6 @@ static int foo = 1;
 
    } else {
 
-      NSLog(@"status is now %d", _movieReader.status);
       if(_movieReader.status == 2){
          [timer invalidate];
          timer = nil;
