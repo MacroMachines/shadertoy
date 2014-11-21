@@ -125,8 +125,8 @@
 		6CAA22041678A797009BB691 /* shadertoy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shadertoy-Prefix.pch"; sourceTree = "<group>"; };
 		6CAA22051678A797009BB691 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CAA22061678A797009BB691 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6CAA220E1678A797009BB691 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		6CAA22101678A797009BB691 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		6CAA220E1678A797009BB691 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		6CAA22101678A797009BB691 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		6CAA221B1678A797009BB691 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CA0D27CE179478C600F317D4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		CA0D27D0179478D500F317D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +166,8 @@
 		6C27388016BE2ECB0064F722 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				6CAA220E1678A797009BB691 /* Shader.fsh */,
+				6CAA22101678A797009BB691 /* Shader.vsh */,
 				6C27388116BE2ECB0064F722 /* flower.fsh */,
 				6C27388216BE2ECB0064F722 /* julia.fsh */,
 				6C27388316BE2ECB0064F722 /* ray_ball.fsh */,
@@ -302,8 +304,6 @@
 				CA528D65173C198A009CA7DA /* UIColor+unixcolors.m */,
 				6CAA22051678A797009BB691 /* AppDelegate.h */,
 				6CAA22061678A797009BB691 /* AppDelegate.m */,
-				6CAA220E1678A797009BB691 /* Shader.fsh */,
-				6CAA22101678A797009BB691 /* Shader.vsh */,
 				6C87EEB616BE98100001D341 /* SimpleOpenGLView.h */,
 				6C87EEB716BE98100001D341 /* SimpleOpenGLView.m */,
 				6C27386116BE17240064F722 /* HomeViewController.h */,

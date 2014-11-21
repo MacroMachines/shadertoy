@@ -16,6 +16,12 @@
 #import <Accelerate/Accelerate.h>
 
 @interface SimpleOpenGLView()
+{
+    // hold vertex shader between compiles
+    GLuint vertexShader;
+   GLuint fragmentShader;
+    
+}
 - (const GLchar *)readFile:(NSString *)name;
 - (void) setMouseFromTouches:(NSSet*)touches;
 @end
@@ -131,6 +137,7 @@ const GLubyte Indices[] = {
    [self setupContext];
    [self setupRenderBuffer];
    [self setupFrameBuffer];
+   [self compileVertexShader];
    [self compileShaders];
    [self setupVBOs];
 
@@ -187,14 +194,13 @@ const GLubyte Indices[] = {
    self.startTime =[NSDate date];
    screenX = self.frame.size.width;
    screenY = self.frame.size.height;
-   self.vertexShaderFilename =@"simple1";
+   self.vertexShaderFilename = @"simple1";
 
    self.shaderV  = [self loadFile : self.vertexShaderFilename fileExt:@"vsh"];
    displayLink = nil;
 
    if(shaderFromString){
          // shader string passed in init
-
    } else {
    if(self.shaderF ==nil || self.shaderF.length <1)
       self.shaderF  = [self loadFile : self.fragmentShaderFilename fileExt:@"fsh"];
@@ -240,10 +246,9 @@ const GLubyte Indices[] = {
    glViewport(0, 0, self.frame.size.width, self.frame.size.height);
 
       // 2
-   glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE,
-                         sizeof(Vertex), 0);
-   glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE,
-                         sizeof(Vertex), (GLvoid*) (sizeof(float) *3));
+   glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+   glVertexAttribPointer(_surfacePositionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+   glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) *3));
    glVertexAttribPointer(_texCoordSlot, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*) (sizeof(float) * 7));
 
    ftime = -[self.startTime timeIntervalSinceNow];
@@ -329,8 +334,19 @@ const GLubyte Indices[] = {
 
 
 -(BOOL) canCompileShader:(NSString*)shaderString withType:(GLenum)shaderType  {
+    
+    
+    if ( shaderString.length == 0) {
+        return NO;
+    }
+    
       // 2
    GLuint shaderHandle = glCreateShader(shaderType);
+    
+    
+    if( shaderHandle == 0 ) {
+        return NO;
+    }
 
       // 3
    const char* shaderStringUTF8 = [shaderString UTF8String];
@@ -342,15 +358,21 @@ const GLubyte Indices[] = {
 
       // 5
    GLint compileSuccess;
+    
    glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &compileSuccess);
+    
    if (compileSuccess == GL_FALSE) {
       return NO;
    }else{
+      fragmentShader = shaderHandle;
       return YES;
    }
    return NO;
 }
 
+- (void)compileVertexShader{
+   vertexShader = [self compileShader:self.shaderV      withType:GL_VERTEX_SHADER]  ;
+}
 
 - (GLuint)compileShader:(NSString*)shaderString withType:(GLenum)shaderType  {
 
@@ -380,13 +402,13 @@ const GLubyte Indices[] = {
    return shaderHandle;
 
 }
+
+
 - (void)compileShaders {
-
-      // 1
-   GLuint vertexShader = [self compileShader:self.shaderV      withType:GL_VERTEX_SHADER]  ;
-
-   GLuint fragmentShader;
-   if(![self canCompileShader:self.shaderF withType:GL_FRAGMENT_SHADER]){
+    
+    BOOL shaderCompiles =[self canCompileShader:self.shaderF withType:GL_FRAGMENT_SHADER];
+    
+   if(! shaderCompiles ){
       NSLog(@"%s shader does not compile",__PRETTY_FUNCTION__);
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                       message:@"shader does not compile"
@@ -397,8 +419,7 @@ const GLubyte Indices[] = {
       return;
 
    }
-   fragmentShader = [self compileShader:self.shaderF     withType:GL_FRAGMENT_SHADER ];
-
+    
       // 2
    programHandle = glCreateProgram();
    glAttachShader(programHandle, vertexShader);

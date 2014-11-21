@@ -30,6 +30,7 @@
    EAGLContext* _context;
    GLuint _colorRenderBuffer;
    GLuint _positionSlot;
+   GLuint _surfacePositionSlot;
    GLuint _colorSlot;
    GLuint _texCoordSlot;
    GLuint _texCoordSlot2;

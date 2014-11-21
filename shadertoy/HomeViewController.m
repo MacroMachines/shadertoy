@@ -178,10 +178,10 @@ typedef void (^ReqHandler) (NSURLResponse *response, NSData *data, NSError *conn
 - (IBAction)toggleSrc:(id)sender {
     dispatch_async(dispatch_get_main_queue(), ^{
     if(self.sourceTextView.hidden == YES){
-        self.srcButton.titleLabel.text = @"hide src";
+        //self.srcButton.titleLabel.text = @"hide src";
         self.sourceTextView.hidden = NO;
     } else {
-        self.srcButton.titleLabel.text = @"show src";
+        //self.srcButton.titleLabel.text = @"show src";
         self.sourceTextView.hidden = YES;
     }
     });
